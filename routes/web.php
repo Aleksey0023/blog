@@ -50,6 +50,13 @@ Route::prefix('categories/{category}/posts')->group(function () {
     });
 });
 
+Route::prefix('courses')->group(function () {
+    Route::name('course.')->group(function () {
+        Route::get('/', \App\Http\Controllers\Course\IndexController::class)->name('index');
+        Route::get('/{course}', \App\Http\Controllers\Course\ShowController::class)->name('show');
+    });
+});
+
 Route::middleware(['auth', 'verified'])->prefix('personal')->group(function () {
     Route::name('personal.main.')->group(function () {
         Route::get('/', \App\Http\Controllers\Personal\Main\IndexController::class)->name('index');
@@ -128,6 +135,18 @@ Route::middleware(['auth', 'admin', 'verified'])->prefix('admin')->group(functio
             Route::get('/{user}/edit', \App\Http\Controllers\Admin\User\EditController::class)->name('edit');
             Route::patch('/{user}', \App\Http\Controllers\Admin\User\UpdateController::class)->name('update');
             Route::delete('/{user}', \App\Http\Controllers\Admin\User\DestroyController::class)->name('destroy');
+        });
+    });
+
+    Route::prefix('courses')->group(function () {
+        Route::name('admin.course.')->group(function () {
+            Route::get('/', \App\Http\Controllers\Admin\Course\IndexController::class)->name('index');
+            Route::get('/create', \App\Http\Controllers\Admin\Course\CreateController::class)->name('create');
+            Route::post('/', \App\Http\Controllers\Admin\Course\StoreController::class)->name('store');
+            Route::get('/{course}', \App\Http\Controllers\Admin\Course\ShowController::class)->name('show');
+            Route::get('/{course}/edit', \App\Http\Controllers\Admin\Course\EditController::class)->name('edit');
+            Route::patch('/{course}', \App\Http\Controllers\Admin\Course\UpdateController::class)->name('update');
+            Route::delete('/{course}', \App\Http\Controllers\Admin\Course\DestroyController::class)->name('destroy');
         });
     });
 });
