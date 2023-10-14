@@ -70,6 +70,19 @@
                                     class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
+                    <div class="col-lg-3 col-6">
+                        <div class="small-box bg-indigo">
+                            <div class="inner">
+                                <h3>{{$data['coursesCount']}}</h3>
+                                <p>Курсы</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <a href="{{route('admin.course.index')}}" class="small-box-footer">Подробнее <i
+                                    class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

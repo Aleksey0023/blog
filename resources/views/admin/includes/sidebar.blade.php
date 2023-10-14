@@ -42,6 +42,14 @@
                     </p>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="{{route('admin.course.index')}}" class="nav-link">
+                    <i class="nav-icon fas fa-graduation-cap"></i>
+                    <p>
+                        Курсы
+                    </p>
+                </a>
+            </li>
         </ul>
     </div>
 </aside>
