@@ -32,7 +32,7 @@
                         <a class="nav-link" href="{{route('course.index')}}">Курсы</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Отзывы</a>
+                        <a class="nav-link" href="{{route('review.index')}}">Отзывы</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Обо мне</a>

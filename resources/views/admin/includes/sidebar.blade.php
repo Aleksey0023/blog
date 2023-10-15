@@ -50,6 +50,14 @@
                     </p>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="{{route('admin.review.index')}}" class="nav-link">
+                    <i class="nav-icon fas fa-hand-holding-heart"></i>
+                    <p>
+                        Отзывы
+                    </p>
+                </a>
+            </li>
         </ul>
     </div>
 </aside>

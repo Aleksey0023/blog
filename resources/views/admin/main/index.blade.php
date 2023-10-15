@@ -83,6 +83,19 @@
                                     class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
+                    <div class="col-lg-3 col-6">
+                        <div class="small-box bg-orange">
+                            <div class="inner">
+                                <h3>{{$data['reviewsCount']}}</h3>
+                                <p>Отзывы</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-hand-holding-heart"></i>
+                            </div>
+                            <a href="{{route('admin.review.index')}}" class="small-box-footer">Подробнее <i
+                                    class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
