@@ -48,6 +48,30 @@
                                     </tr>
                                     </tbody>
                                 </table>
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>Главное изображение</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="w-50 mb-2">
+                                                @if($course->main_image == null)
+                                                    <img src="{{asset('assets/images/forSeeds/135258.jpg')}}" alt="main_image"
+                                                         class="w-50">
+                                                @else
+                                                    <img src="{{asset('storage/' . ($course->main_image))}}" alt="main_image"
+                                                         class="w-50">
+                                                @endif
+                                            </div>
+                                        </td>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
