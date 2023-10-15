@@ -38,7 +38,7 @@
                         <a class="nav-link" href="{{route('about.index')}}">Обо мне</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Контакты</a>
+                        <a class="nav-link" href="{{route('contact.index')}}">Контакты</a>
                     </li>
                 </ul>
                 @guest()
