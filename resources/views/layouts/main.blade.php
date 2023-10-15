@@ -38,9 +38,6 @@
                         <a class="nav-link" href="{{route('about.index')}}">Обо мне</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Галерея</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#">Контакты</a>
                     </li>
                 </ul>
