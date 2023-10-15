@@ -68,6 +68,12 @@ Route::prefix('about')->group(function () {
     });
 });
 
+Route::prefix('contacts')->group(function () {
+    Route::name('contact.')->group(function () {
+        Route::get('/', \App\Http\Controllers\Contact\IndexController::class)->name('index');
+    });
+});
+
 Route::middleware(['auth', 'verified'])->prefix('personal')->group(function () {
     Route::name('personal.main.')->group(function () {
         Route::get('/', \App\Http\Controllers\Personal\Main\IndexController::class)->name('index');
