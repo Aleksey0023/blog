@@ -29,13 +29,13 @@
                         <a class="nav-link" href="{{route('post.index')}}">Блог</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Курсы</a>
+                        <a class="nav-link" href="{{route('course.index')}}">Курсы</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Отзывы</a>
+                        <a class="nav-link" href="{{route('review.index')}}">Отзывы</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Обо мне</a>
+                        <a class="nav-link" href="{{route('about.index')}}">Обо мне</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Галерея</a>
