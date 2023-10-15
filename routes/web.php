@@ -63,6 +63,12 @@ Route::prefix('reviews')->group(function () {
     });
 });
 
+Route::prefix('about')->group(function () {
+    Route::name('about.')->group(function () {
+        Route::get('/', \App\Http\Controllers\About\IndexController::class)->name('index');
+    });
+});
+
 Route::middleware(['auth', 'verified'])->prefix('personal')->group(function () {
     Route::name('personal.main.')->group(function () {
         Route::get('/', \App\Http\Controllers\Personal\Main\IndexController::class)->name('index');
