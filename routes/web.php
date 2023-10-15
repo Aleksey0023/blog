@@ -6,7 +6,6 @@ use App\Http\Controllers\Admin\Category\EditController;
 use App\Http\Controllers\Admin\Category\ShowController;
 use App\Http\Controllers\Admin\Category\StoreController;
 use App\Http\Controllers\Admin\Category\UpdateController;
-use App\Http\Controllers\Main\IndexController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -22,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::name('main.')->group(function () {
-    Route::get('/', IndexController::class)->name('index'); // Главная страница в разработке, поэтому пока идёт редирект на страницу блога
+    Route::get('/', \App\Http\Controllers\Post\IndexController::class)->name('index');
 });
 
 Route::prefix('posts')->group(function () {
