@@ -54,6 +54,54 @@
                                     </tr>
                                     </tbody>
                                 </table>
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>Превью</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="w-50 mb-2">
+                                                @if($post->preview_image == null)
+                                                    <img src="{{asset('assets/images/forSeeds/135258.jpg')}}" alt="preview_image"
+                                                         class="w-50">
+                                                @else
+                                                    <img src="{{asset('storage/' . ($post->preview_image))}}" alt="preview_image"
+                                                         class="w-50">
+                                                @endif
+                                            </div>
+                                        </td>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>Главное изображение</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="w-50 mb-2">
+                                                @if($post->main_image == null)
+                                                    <img src="{{asset('assets/images/forSeeds/135258.jpg')}}" alt="main_image"
+                                                         class="w-50">
+                                                @else
+                                                    <img src="{{asset('storage/' . ($post->main_image))}}" alt="main_image"
+                                                         class="w-50">
+                                                @endif
+                                            </div>
+                                        </td>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
