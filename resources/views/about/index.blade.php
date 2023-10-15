@@ -3,7 +3,7 @@
     <main class="blog">
         <div class="container">
             <h1 class="edica-page-title" data-aos="fade-up">Обо мне</h1>
-            <section class="edica-about-vision py-5">
+            <section class="edica-about-vision pt-0">
                 <div class="row">
                     <div class="col-md-6 pb-3 pb-md-0 mb-4 mb-md-0" data-aos="fade-right" data-aos-delay="200">
                         <img src="{{asset('assets/images/forSeeds/135258.jpg')}}" alt="vision"
