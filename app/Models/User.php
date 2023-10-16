@@ -15,14 +15,14 @@ User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
 
-    const ROLE_ADMIN = 0;
-    const ROLE_READER = 1;
+    const ROLE_ADMIN = 'Админ';
+    const ROLE_USER = 'Пользователь';
 
     public static function getRoles()
     {
         return [
             self::ROLE_ADMIN => 'Админ',
-            self::ROLE_READER => 'Читатель'
+            self::ROLE_USER => 'Пользователь'
         ];
     }
 
