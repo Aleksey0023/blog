@@ -72,4 +72,12 @@ User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(Comment::class, 'user_id', 'id');
     }
+
+    public static function boot() {
+        parent::boot();
+
+        static::deleting(function($user) {
+            $user->comments()->delete();
+        });
+    }
 }

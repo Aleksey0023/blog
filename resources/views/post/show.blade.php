@@ -66,7 +66,11 @@
                                             <img src="{{asset('storage/' . $relatedPosts->preview_image)}}"
                                                  alt="related post" class="post-thumbnail">
                                         @endif
+                                            @if(isset($relatedPosts->category->title))
                                         <p class="post-category">{{$relatedPosts->category->title}}</p>
+                                            @else
+                                                <p class="post-category">Без категории</p>
+                                            @endif
                                         <a href="{{route('post.show', $relatedPosts->id)}}"><h5
                                                 class="post-title">{{$relatedPosts->title}}</h5></a>
                                     </div>
@@ -79,8 +83,7 @@
                         </section>
                     @endif
                     <section class="comment_list mb-5 mt-5">
-                        <h2 class="section-title mb-4" data-aos="fade-up">Комментарии ({{$post->comments->count()}}
-                            )</h2>
+                        <h2 class="section-title mb-4" data-aos="fade-up">Комментарии ({{$post->comments->count()}})</h2>
                         @foreach($post->comments as $comment)
                             <div class="comment-text mb-5" data-aos="fade-up">
                             <span class="username">
