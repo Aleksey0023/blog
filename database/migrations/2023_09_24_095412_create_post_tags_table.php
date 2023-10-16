@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Post;
+use App\Models\Tag;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,15 +14,9 @@ return new class extends Migration {
     {
         Schema::create('post_tags', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('post_id');
-            $table->unsignedBigInteger('tag_id');
+            $table->foreignIdFor(Post::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Tag::class)->constrained()->cascadeOnDelete();
             $table->timestamps();
-
-            $table->index('post_id', 'post_tag_post_idx');
-            $table->index('tag_id', 'post_tag_tag_idx');
-
-            $table->foreign('post_id', 'post_tag_post_fk')->on('posts')->references('id')->onDelete('cascade');
-            $table->foreign('tag_id', 'post_tag_tag_fk')->on('tags')->references('id')->onDelete('cascade');
         });
     }
 
