@@ -31,7 +31,7 @@
                 <form action="{{route('main.index')}}" method="GET">
                     <input class="btn btn-primary mr-2 btn-sm" type="submit" value="Перейти на сайт">
                 </form>
-                @if(auth()->user()->role == 0)
+                @if(auth()->user()->role == 'Админ')
                     <form action="{{route('admin.main.index')}}" method="GET">
                         <input class="btn btn-primary mr-2 btn-sm" type="submit" value="Админ">
                     </form>
