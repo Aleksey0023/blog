@@ -4,7 +4,7 @@
         <div class="container">
             <h1 class="edica-page-title" data-aos="fade-up">Отзывы</h1>
             <section class="featured-posts-section">
-                <div class="row">
+                <div class="row justify-content-center">
                     @foreach($reviews as $review)
                         <div class="col-md-6 mb-5" data-aos="fade-up">
                             <div class="blog-post-thumbnail-wrapper">
