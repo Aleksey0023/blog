@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Post;
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,15 +14,9 @@ return new class extends Migration {
     {
         Schema::create('post_user_likes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('post_id');
-            $table->unsignedBigInteger('user_id');
+            $table->foreignIdFor(Post::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
             $table->timestamps();
-
-            $table->index('post_id', 'pul_post_idx');
-            $table->index('user_id', 'pul_user_idx');
-
-            $table->foreign('post_id', 'pul_post_fk')->on('posts')->references('id')->onDelete('cascade');
-            $table->foreign('user_id', 'pul_user_fk')->on('users')->references('id')->onDelete('cascade');
         });
     }
 
