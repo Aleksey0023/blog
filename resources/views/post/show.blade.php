@@ -21,7 +21,7 @@
                     <img src="{{asset('storage/' . $post->main_image)}}" alt="featured image" class="w-100">
                 @endif
             </section>
-            <section class="post-content">
+            <section class="post-content" data-aos="fade-up">
                 <div class="row">
                     <div class="col-lg-9 mx-auto">
                         {!! $post->content !!}
@@ -29,7 +29,7 @@
                 </div>
             </section>
             <div class="row">
-                <div class="col-lg-9 mx-auto">
+                <div class="col-lg-9 mx-auto" data-aos="fade-up">
                     <section class="py-4">
                         @auth()
                             <form action="{{route('post.like.store', $post->id)}}" method="POST">
