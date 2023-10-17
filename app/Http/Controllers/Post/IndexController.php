@@ -12,13 +12,9 @@ class IndexController extends Controller
     {
         $posts = Post::orderBy('created_at', 'DESC')->paginate(6);
 
-        if ($posts->count() > 4) {
-            $randomPosts = Post::get()->random(4);
-        } else if (!Post::all()->isEmpty()) {
-            $randomPosts = Post::get()->random($posts->count());
-        } else {
-            $randomPosts = null;
-        }
+        $postCount = $posts->count();
+
+        $randomPosts = Post::inRandomOrder()->take(min(4, $postCount))->get();
 
         $likedPosts = Post::withCount('likedUsers')->orderBy('liked_users_count', 'DESC')->get()->take(4);
         $categories = Category::all();
