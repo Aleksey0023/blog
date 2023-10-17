@@ -5,13 +5,11 @@
             <h1 class="edica-page-title" data-aos="fade-up">{{$post->title}}</h1>
             <p class="edica-blog-post-meta mb-3" data-aos="fade-up" data-aos-delay="200">
                 Теги:
-                @if($post->tags->count() > 0)
-                    @foreach($post->tags as $tag)
-                        • {{$tag->title}}
-                    @endforeach
-                @else
-                    {{$post->tags->count()}}
-                @endif
+                @forelse($post->tags as $tag)
+                    • {{ $tag->title }}
+                @empty
+                    {{ $post->tags->count() }}
+                @endforelse
             </p>
             <p class="edica-blog-post-meta" data-aos="fade-up" data-aos-delay="200">
                 • {{$date->translatedFormat('d-m-Y')}} • {{$date->format('H:i')}} • Комментарии
