@@ -59,7 +59,7 @@
                             <h5 class="widget-title">Случайные посты</h5>
                         </div>
                         <div class="row blog-post-row">
-                            @if($randomPosts !== null)
+                            @if(isset($randomPosts))
                                 @foreach($randomPosts as $post)
                                     <div class="col-md-6 blog-post" data-aos="fade-up">
                                         <div class="blog-post-thumbnail-wrapper">
