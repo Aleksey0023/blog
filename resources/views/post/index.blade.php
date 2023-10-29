@@ -113,7 +113,7 @@
                                 <li class="nav-item d-flex justify-content-between align-items-center">
                                     <h6>
                                         <a class="nav-link"
-                                           href="{{route('category.post.index', $category->id)}}">{{$category->title}}</a>
+                                           href="{{route('category.post.index', $category->id)}}" style="color: black;">{{$category->title}}</a>
                                     </h6>
                                 </li>
                             @endforeach
@@ -123,7 +123,7 @@
                         <h5 class="widget-title">Популярные посты</h5>
                         <ul class="post-list">
                             @foreach($likedPosts as $post)
-                                <li class="post">
+                                <li class="post border-bottom-0 mb-0 pb-0">
                                     <a href="{{route('post.show', $post->id)}}" class="post-permalink media">
                                         @if($post->preview_image == null)
                                             <img src="{{asset('assets/images/forSeeds/135258.jpg')}}" alt="blog post">
