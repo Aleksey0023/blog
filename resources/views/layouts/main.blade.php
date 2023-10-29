@@ -16,7 +16,7 @@
 <div class="edica-loader"></div>
 <header class="edica-header">
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
             <a class="navbar-brand" href="{{route('post.index')}}"><img src="{{asset('assets/images/logo.png')}}"
                                                                         alt="logo"></a>
             <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#edicaMainNav"
