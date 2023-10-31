@@ -97,18 +97,17 @@
                     @auth()
                         <section class="comment-section">
                             <h2 class="section-title" data-aos="fade-up">Оставить комментарий</h2>
-                            <form action="{{route('post.comment.store', $post->id)}}" method="post">
+                            <form id="comment-form" action="{{ route('post.comment.store', $post->id) }}" method="post">
                                 @csrf
                                 <div class="row">
                                     <div class="form-group col-12" data-aos="fade-up">
                                         <label for="comment" class="sr-only">Comment</label>
-                                        <textarea name="message" id="comment" class="form-control"
-                                                  placeholder="Напишите комментарий" rows="10"></textarea>
+                                        <textarea name="message" id="comment" class="form-control" placeholder="Напишите комментарий" rows="10"></textarea>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12" data-aos="fade-up">
-                                        <input type="submit" value="Отправить" class="btn btn-warning">
+                                        <button type="button" id="submit-comment" class="btn btn-warning">Отправить</button>
                                     </div>
                                 </div>
                             </form>
@@ -119,3 +118,5 @@
         </div>
     </main>
 @endsection
+
+<script src="{{asset('assets/js/comment.js')}}"></script>
