@@ -14,7 +14,13 @@ class StoreController extends Controller
         $data = $request->validated();
         $data['user_id'] = auth()->user()->id;
         $data['post_id'] = $post->id;
-        Comment::create($data);
-        return redirect()->route('post.show', $post->id);
+        $comment = Comment::create($data);
+
+        return response()->json([
+            'success' => true,
+            'username' => $comment->user->name,
+            'comment' => $comment->message,
+            'timeAgo' => $comment->dateAsCarbon->diffForHumans(),
+        ]);
     }
 }
