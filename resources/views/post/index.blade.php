@@ -21,16 +21,16 @@
                                     <p class="blog-post-category">Без категории</p>
                                 @endif
                                 @auth()
-                                    <form action="{{route('post.like.store', $post->id)}}" method="POST">
+                                    <form id="like-form-{{$post->id}}" action="{{ route('post.like.store', $post->id) }}" method="POST">
                                         @csrf
-                                        <button type="submit" class="border-0 bg-transparent">
-                                            @if(auth()->user()->likedPosts->contains($post->id))
+                                        <button type="button" id="like-button-{{$post->id}}" class="border-0 bg-transparent">
+                                            @if (auth()->user()->likedPosts->contains($post->id))
                                                 <i class="fas fa-heart" style="color: #ff0000;"></i>
                                             @else
                                                 <i class="far fa-heart" style="color: #ff0000;"></i>
                                             @endif
                                         </button>
-                                        <span>{{$post->liked_users_count}}</span>
+                                        <span id="like-count-{{$post->id}}">{{ $post->liked_users_count }}</span>
                                     </form>
                                 @endauth
                                 @guest()
@@ -77,16 +77,16 @@
                                                 <p class="blog-post-category">Без категории</p>
                                             @endif
                                             @auth()
-                                                <form action="{{route('post.like.store', $post->id)}}" method="POST">
+                                                <form id="random-like-form-{{$post->id}}" action="{{ route('post.like.store', $post->id) }}" method="POST">
                                                     @csrf
-                                                    <button type="submit" class="border-0 bg-transparent">
-                                                        @if(auth()->user()->likedPosts->contains($post->id))
+                                                    <button type="button" id="random-like-button-{{$post->id}}" class="border-0 bg-transparent">
+                                                        @if (auth()->user()->likedPosts->contains($post->id))
                                                             <i class="fas fa-heart" style="color: #ff0000;"></i>
                                                         @else
                                                             <i class="far fa-heart" style="color: #ff0000;"></i>
                                                         @endif
                                                     </button>
-                                                    <span>{{$post->liked_users_count}}</span>
+                                                    <span id="random-like-count-{{$post->id}}">{{ $post->liked_users_count }}</span>
                                                 </form>
                                             @endauth
                                             @guest()
@@ -143,3 +143,7 @@
         </div>
     </main>
 @endsection
+
+@auth()
+    <script src="{{asset('assets/js/like.js')}}"></script>
+@endauth

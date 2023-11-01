@@ -9,7 +9,14 @@ class StoreController extends Controller
 {
     public function __invoke(Post $post)
     {
-        auth()->user()->likedPosts()->toggle($post->id);
-        return redirect()->back();
+        $user = auth()->user();
+        $user->likedPosts()->toggle($post->id);
+        $liked = $user->likedPosts->contains($post->id);
+        $likeCount = $post->liked_users_count;
+
+        return response()->json([
+            'liked' => $liked,
+            'likeCount' => $likeCount,
+        ]);
     }
 }

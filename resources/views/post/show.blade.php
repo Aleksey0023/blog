@@ -32,16 +32,16 @@
                 <div class="col-lg-9 mx-auto" data-aos="fade-up">
                     <section class="py-4">
                         @auth()
-                            <form action="{{route('post.like.store', $post->id)}}" method="POST">
+                            <form id="like-form-{{$post->id}}" action="{{ route('post.like.store', $post->id) }}" method="POST">
                                 @csrf
-                                <button type="submit" class="border-0 bg-transparent">
-                                    @if(auth()->user()->likedPosts->contains($post->id))
+                                <button type="button" id="like-button-{{$post->id}}" class="border-0 bg-transparent">
+                                    @if (auth()->user()->likedPosts->contains($post->id))
                                         <i class="fas fa-heart" style="color: #ff0000;"></i>
                                     @else
                                         <i class="far fa-heart" style="color: #ff0000;"></i>
                                     @endif
                                 </button>
-                                <span>{{$post->liked_users_count}}</span>
+                                <span id="like-count-{{$post->id}}">{{ $post->liked_users_count }}</span>
                             </form>
                         @endauth
                         @guest()
@@ -64,11 +64,11 @@
                                             <img src="{{asset('storage/' . $relatedPosts->preview_image)}}"
                                                  alt="related post" class="post-thumbnail">
                                         @endif
-                                            @if(isset($relatedPosts->category->title))
-                                        <p class="post-category">{{$relatedPosts->category->title}}</p>
-                                            @else
-                                                <p class="post-category">Без категории</p>
-                                            @endif
+                                        @if(isset($relatedPosts->category->title))
+                                            <p class="post-category">{{$relatedPosts->category->title}}</p>
+                                        @else
+                                            <p class="post-category">Без категории</p>
+                                        @endif
                                         <a href="{{route('post.show', $relatedPosts->id)}}"><h5
                                                 class="post-title">{{$relatedPosts->title}}</h5></a>
                                     </div>
@@ -119,4 +119,7 @@
     </main>
 @endsection
 
-<script src="{{asset('assets/js/comment.js')}}"></script>
+@auth()
+    <script src="{{asset('assets/js/comment.js')}}"></script>
+    <script src="{{asset('assets/js/like.js')}}"></script>
+@endauth
