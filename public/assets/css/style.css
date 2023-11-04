@@ -7247,7 +7247,7 @@ a.text-dark:hover, a.text-dark:focus {
           display: none; } }
 
 .edica-footer {
-  background-color: #191919;
+  background-color: #b3e5fc;
   padding-top: 30px;
   margin-top: -93px;
   padding-bottom: 0;
@@ -7261,7 +7261,7 @@ a.text-dark:hover, a.text-dark:focus {
     font-size: 22px;
     font-weight: 700;
     margin-bottom: 4px;
-    color: #ffffff; }
+    color: #0d47a1; }
   .edica-footer .footer-social-links {
     padding-top: 31px;
     padding-bottom: 31px; }
@@ -7304,6 +7304,7 @@ a.text-dark:hover, a.text-dark:focus {
   padding-bottom: 31px;
   border-top: 1px solid rgba(240, 240, 240, 0.07);
   display: flex;
+  color: #0d47a1;
   justify-content: space-between; }
   @media (max-width: 767px) {
     .footer-bottom-content {
@@ -7485,7 +7486,7 @@ a.text-dark:hover, a.text-dark:focus {
   .edica-landing-section.edica-landing-blog .landing-blog-post .blog-post-title {
     font-size: 22px;
     font-weight: 500;
-    color: #000000; }
+    color: #6d4c41; }
   .edica-landing-section.edica-landing-blog .landing-blog-post .blog-post-link {
     color: #f29431; }
     .edica-landing-section.edica-landing-blog .landing-blog-post .blog-post-link::after {
@@ -7654,7 +7655,7 @@ a.text-dark:hover, a.text-dark:focus {
     font-size: 20px;
     font-weight: 700;
     line-height: 1.5;
-    color: #020202;
+    color: #6d4c41;
     margin-bottom: 0; }
   .blog .blog-post:hover .blog-post-thumbnail-wrapper img {
     transform: scale(1.075); }
@@ -7667,7 +7668,7 @@ a.text-dark:hover, a.text-dark:focus {
     font-size: 25px;
     font-weight: 700;
     line-height: 1.5;
-    color: #2E937A;
+    color: #0288d1;
     margin-bottom: 25px; }
 
 .widget-post-carousel .post-carousel .carousel-indicators {
@@ -7697,7 +7698,7 @@ a.text-dark:hover, a.text-dark:focus {
   font-size: 20px;
   font-weight: 500;
   line-height: 1.5;
-  color: #020202; }
+  color: #6d4c41; }
   .widget-post-carousel .post-carousel .carousel-item .post-title a:hover {
     text-decoration: none; }
 
@@ -7791,6 +7792,7 @@ a.text-dark:hover, a.text-dark:focus {
   margin-bottom: 52px; }
   .blog-post .related-posts .section-title {
     font-size: 30px;
+    color: #0288d1;
     line-height: 1.97; }
   .blog-post .related-posts .post-thumbnail {
     width: 100%;
@@ -7804,7 +7806,7 @@ a.text-dark:hover, a.text-dark:focus {
     font-size: 20px;
     font-weight: bold;
     line-height: 1.5;
-    color: #020202; }
+    color: #6d4c41; }
 
 .blog-post .comment-section {
   margin-bottom: 100px; }
@@ -7935,9 +7937,21 @@ label {
   font-size: 60px;
   font-weight: 700;
   line-height: 0.98;
-  color: #000000;
+  color: #0288d1;
   padding-top: 90px;
   padding-bottom: 90px;
   text-align: center; }
+
+.my-text {
+    font-family: Calibri, sans-serif;
+}
+
+.my-title {
+    color: #6d4c41;
+}
+
+.my-title2 {
+    color: #0288d1;
+}
 
 /*# sourceMappingURL=style.css.map */

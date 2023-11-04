@@ -112,8 +112,8 @@
                             @foreach($categories as $category)
                                 <li class="nav-item d-flex justify-content-between align-items-center">
                                     <h6>
-                                        <a class="nav-link"
-                                           href="{{route('category.post.index', $category->id)}}" style="color: black;">{{$category->title}}</a>
+                                        <a class="nav-link my-title"
+                                           href="{{route('category.post.index', $category->id)}}">{{$category->title}}</a>
                                     </h6>
                                 </li>
                             @endforeach
@@ -131,7 +131,7 @@
                                             <img src="{{asset('storage/' . $post->preview_image)}}" alt="blog post">
                                         @endif
                                         <div class="media-body">
-                                            <h6 class="post-title">{{$post->title}}</h6>
+                                            <h6 class="post-title my-title">{{$post->title}}</h6>
                                         </div>
                                     </a>
                                 </li>
