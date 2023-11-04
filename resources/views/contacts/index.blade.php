@@ -7,7 +7,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 d-flex flex-wrap align-items-end align-content-center" data-aos="fade-up-right">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipng elit, sed do eiusmod tempor incididunt ut labore aliqua. Ut enim que minim veniam, quis nostrud exercitation.</p>
+                            <p class="my-text">Lorem ipsum dolor sit amet, consectetur adipng elit, sed do eiusmod tempor incididunt ut labore aliqua. Ut enim que minim veniam, quis nostrud exercitation.</p>
                             <ul class="landing-about-list">
                                 <li>Lorem ipsum dolor sit amet, consectetur adipng elit</li>
                                 <li>Lorem ipsum dolor sit amet, consectetur adipng elit</li>

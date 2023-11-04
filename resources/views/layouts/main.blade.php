@@ -22,48 +22,48 @@
             <div class="collapse navbar-collapse" id="edicaMainNav">
                 <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('post.index')}}">Блог</a>
+                        <a class="nav-link text-right" href="{{route('post.index')}}">Блог</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('course.index')}}">Курсы</a>
+                        <a class="nav-link text-right" href="{{route('course.index')}}">Курсы</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('review.index')}}">Отзывы</a>
+                        <a class="nav-link text-right" href="{{route('review.index')}}">Отзывы</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('about.index')}}">Обо мне</a>
+                        <a class="nav-link text-right" href="{{route('about.index')}}">Обо мне</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('contact.index')}}">Контакты</a>
+                        <a class="nav-link text-right" href="{{route('contact.index')}}">Контакты</a>
                     </li>
                 </ul>
                 @guest()
-                    <form action="{{route('login')}}" method="GET">
+                    <form action="{{route('login')}}" method="GET" class="text-right">
                         <input class="btn btn-primary mr-2 btn-sm" type="submit" value="Войти">
                     </form>
-                    <form action="{{route('register')}}" method="GET">
-                        <input class="btn btn-primary my-2 btn-sm" type="submit" value="Регистрация">
+                    <form action="{{route('register')}}" method="GET" class="text-right">
+                        <input class="btn btn-primary my-2 mr-2 btn-sm" type="submit" value="Регистрация">
                     </form>
                 @endguest
                 @auth()
                     @if(auth()->user()->role == 'Админ')
-                        <form action="{{route('admin.main.index')}}" method="GET">
+                        <form action="{{route('admin.main.index')}}" method="GET" class="text-right">
                             <input class="btn btn-primary my-2 mr-2 btn-sm" type="submit" value="Админ">
                         </form>
-                        <form action="{{route('personal.main.index')}}" method="GET">
+                        <form action="{{route('personal.main.index')}}" method="GET" class="text-right">
                             <input class="btn btn-primary mr-2 btn-sm" type="submit" value="Личный кабинет">
                         </form>
-                        <form action="{{route('logout')}}" method="POST">
+                        <form action="{{route('logout')}}" method="POST" class="text-right">
                             @csrf
-                            <input class="btn btn-primary my-2 btn-sm" type="submit" value="Выйти">
+                            <input class="btn btn-primary my-2 mr-2 btn-sm" type="submit" value="Выйти">
                         </form>
                     @else
-                        <form action="{{route('personal.main.index')}}" method="GET">
-                            <input class="btn btn-primary mr-2 btn-sm" type="submit" value="Личный кабинет">
+                        <form action="{{route('personal.main.index')}}" method="GET" class="text-right">
+                            <input class="btn btn-primary my-2 mr-2 btn-sm" type="submit" value="Личный кабинет">
                         </form>
-                        <form action="{{route('logout')}}" method="POST">
+                        <form action="{{route('logout')}}" method="POST" class="text-right">
                             @csrf
-                            <input class="btn btn-primary my-2 btn-sm" type="submit" value="Выйти">
+                            <input class="btn btn-primary mr-2 btn-sm" type="submit" value="Выйти">
                         </form>
                     @endif
                 @endauth
@@ -89,9 +89,6 @@
                     <a href="tel:+79138994710"><img src="{{asset('assets/images/call.png')}}" alt="call"></a>
                 </nav>
             </div>
-        </div>
-        <div class="footer-bottom-content justify-content-center">
-            <p class="mb-0">© MyBlog • 2023</p>
         </div>
     </div>
 </footer>
