@@ -82,12 +82,12 @@
                     <img src="{{asset('assets/images/logo.png')}}" alt="logo">
                 </a>
                 <p class="contact-details">@KHOMIKANASTASIYA<br> Английский для ваших целей<br> +7 913 899 47 10</p>
-                <nav class="footer-social-links">
+                <div class="my-2 mx-2">
                     <a href="https://t.me/khomikanastasiya"><img src="{{asset('assets/images/telegram.png')}}"
-                                                                 alt="telegram"></a>
-                    <a href="https://vk.com/club210918350"><img src="{{asset('assets/images/vk.png')}}" alt="vk"></a>
+                                                                 alt="telegram" class="mr-2"></a>
+                    <a href="https://vk.com/club210918350"><img src="{{asset('assets/images/vk.png')}}" alt="vk" class="mr-2"></a>
                     <a href="tel:+79138994710"><img src="{{asset('assets/images/call.png')}}" alt="call"></a>
-                </nav>
+                </div>
             </div>
         </div>
     </div>
