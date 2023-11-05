@@ -58,6 +58,14 @@
                     </p>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="{{route('admin.gallery.index')}}" class="nav-link">
+                    <i class="nav-icon fas fa-image"></i>
+                    <p>
+                        Галерея
+                    </p>
+                </a>
+            </li>
         </ul>
     </div>
 </aside>

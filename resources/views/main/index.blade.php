@@ -1,9 +1,9 @@
 @extends('layouts.home')
 @section('content')
     <section class="menu-inner">
-        <div class="container">
+        <div class="container pl-0 pr-2">
             <header class="edica-header">
-                <nav class="navbar navbar-expand-lg navbar-dark bg-transparent justify-content-end">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-transparent justify-content-end pl-0 pr-0">
                     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
                             data-target="#edicaMainNav"
                             aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,53 +12,61 @@
                     <div class="collapse navbar-collapse" id="edicaMainNav">
                         <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link text-right" href="{{route('main.index')}}" style="color: white">Главная</a>
+                                <a class="nav-link text-right pl-0" href="{{route('main.index')}}" style="color: white">Главная</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-right" href="{{route('post.index')}}" style="color: white">Блог</a>
+                                <a class="nav-link text-right pl-3" href="{{route('post.index')}}" style="color: white">Блог</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-right" href="{{route('course.index')}}" style="color: white">Курсы</a>
+                                <a class="nav-link text-right pl-3" href="{{route('course.index')}}" style="color: white">Курсы</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-right" href="{{route('review.index')}}" style="color: white">Отзывы</a>
+                                <a class="nav-link text-right pl-3" href="{{route('review.index')}}" style="color: white">Отзывы</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-right" href="{{route('about.index')}}" style="color: white">Обо мне</a>
+                                <a class="nav-link text-right pl-3" href="{{route('about.index')}}" style="color: white">Обо мне</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-right" href="{{route('contact.index')}}" style="color: white">Контакты</a>
+                                <a class="nav-link text-right pl-3" href="{{route('gallery.index')}}" style="color: white">Галерея</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-right pl-3" href="{{route('contact.index')}}" style="color: white">Контакты</a>
                             </li>
                         </ul>
                         @guest()
-                            <form action="{{route('login')}}" method="GET" class="text-right">
-                                <input class="btn btn-primary mr-2 btn-sm" type="submit" value="Войти">
+                            <div class="pr-0 d-flex flex-column align-items-end">
+                            <form action="{{route('login')}}" method="GET">
+                                <input class="btn btn-primary my-2 btn-sm" type="submit" value="Войти">
                             </form>
-                            <form action="{{route('register')}}" method="GET" class="text-right">
-                                <input class="btn btn-primary my-2 mr-2 btn-sm" type="submit" value="Регистрация">
+                            <form action="{{route('register')}}" method="GET" >
+                                <input class="btn btn-primary btn-sm" type="submit" value="Регистрация">
                             </form>
+                            </div>
                         @endguest
                         @auth()
                             @if(auth()->user()->role == 'Админ')
-                                <form action="{{route('admin.main.index')}}" method="GET" class="text-right">
-                                    <input class="btn btn-primary my-2 mr-2 btn-sm" type="submit" value="Админ">
+                                <div class="pr-0 d-flex flex-column align-items-end">
+                                <form action="{{route('admin.main.index')}}" method="GET">
+                                    <input class="btn btn-primary my-2 btn-sm" type="submit" value="Админ">
                                 </form>
-                                <form action="{{route('personal.main.index')}}" method="GET" class="text-right">
-                                    <input class="btn btn-primary mr-2 btn-sm" type="submit" value="Личный кабинет">
+                                <form action="{{route('personal.main.index')}}" method="GET">
+                                    <input class="btn btn-primary btn-sm" type="submit" value="Личный кабинет">
                                 </form>
-                                <form action="{{route('logout')}}" method="POST" class="text-right">
+                                <form action="{{route('logout')}}" method="POST">
                                     @csrf
-                                    <input class="btn btn-primary my-2 mr-2 btn-sm" type="submit" value="Выйти">
+                                    <input class="btn btn-primary my-2 btn-sm" type="submit" value="Выйти">
                                 </form>
+                                </div>
                             @else
-                                <form action="{{route('personal.main.index')}}" method="GET" class="text-right">
-                                    <input class="btn btn-primary my-2 mr-2 btn-sm" type="submit"
-                                           value="Личный кабинет">
+                                <div class="pr-0 d-flex flex-column align-items-end">
+                                <form action="{{route('personal.main.index')}}" method="GET">
+                                    <input class="btn btn-primary my-2 btn-sm" type="submit" value="Личный кабинет">
                                 </form>
-                                <form action="{{route('logout')}}" method="POST" class="text-right">
+                                <form action="{{route('logout')}}" method="POST">
                                     @csrf
-                                    <input class="btn btn-primary mr-2 btn-sm" type="submit" value="Выйти">
+                                    <input class="btn btn-primary btn-sm" type="submit" value="Выйти">
                                 </form>
+                                </div>
                             @endif
                         @endauth
                     </div>
