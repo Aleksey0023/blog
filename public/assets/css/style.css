@@ -359,7 +359,7 @@ small,
 mark,
 .mark {
   padding: 0.2em;
-  background-color: #fcf8e3; }
+  background-color: white; }
 
 .list-unstyled {
   padding-left: 0;
@@ -3253,10 +3253,10 @@ input[type="button"].btn-block {
 
 .navbar-dark .navbar-toggler {
   color: rgba(255, 255, 255, 0.5);
-  border-color: rgba(255, 255, 255, 0.1); }
+  border-color: #03a9f4; }
 
 .navbar-dark .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(3, 169, 244, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
 
 .navbar-dark .navbar-text {
   color: rgba(255, 255, 255, 0.5); }
@@ -7204,7 +7204,7 @@ a.text-dark:hover, a.text-dark:focus {
     align-items: flex-end; }
 
 .edica-header .nav-link {
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1;
   font-weight: 700; }
 
@@ -7399,7 +7399,7 @@ a.text-dark:hover, a.text-dark:focus {
       font-size: 18px;
       line-height: 1.56; }
   .edica-landing-section.edica-landing-testimonials {
-    background-color: #fff3ee; }
+    background-color: red; }
     .edica-landing-section.edica-landing-testimonials .landing-testimonial-carousel blockquote {
       padding-top: 40px;
       padding-bottom: 40px; }
@@ -7944,6 +7944,13 @@ label {
 
 .my-text {
     font-family: Calibri, sans-serif;
+    font-size: 19px;
+}
+
+.my-text2 {
+    font-family: Calibri, sans-serif;
+    font-size: 35px;
+    font-weight: bold;
 }
 
 .my-title {
@@ -7952,6 +7959,54 @@ label {
 
 .my-title2 {
     color: #0288d1;
+}
+
+.my-title3 {
+    color: #6d4c41;
+    font-size: 25px;
+}
+
+.home-info {
+    color: #03a9f4;
+}
+
+.home-info2 {
+    color: white;
+}
+
+.menu-inner {
+    background-image: url("../images/backgroundMenu.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.logo2 {
+    display: flex;
+    justify-content: center;
+}
+
+.text-logo2 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.what-expect {
+    display: flex;
+    justify-content: space-between;
+}
+
+li {
+    list-style: none;
+
+}
+
+.mark::before {
+    content: "✓";
+    font-weight: bold;
+    margin-right: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */
