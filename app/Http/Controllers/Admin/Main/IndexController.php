@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin\Main;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Course;
+use App\Models\Gallery;
 use App\Models\Post;
 use App\Models\Review;
 use App\Models\Tag;
@@ -20,7 +21,8 @@ class IndexController extends Controller
             'categoriesCount' => Category::count(),
             'tagsCount' => Tag::count(),
             'coursesCount' => Course::count(),
-            'reviewsCount' => Review::count()
+            'reviewsCount' => Review::count(),
+            'galleryCount' => Gallery::count()
         ];
 
         return view('admin.main.index', compact('data'));

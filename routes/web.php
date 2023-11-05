@@ -68,6 +68,12 @@ Route::prefix('about')->group(function () {
     });
 });
 
+Route::prefix('gallery')->group(function () {
+    Route::name('gallery.')->group(function () {
+        Route::get('/', \App\Http\Controllers\Gallery\IndexController::class)->name('index');
+    });
+});
+
 Route::prefix('contacts')->group(function () {
     Route::name('contact.')->group(function () {
         Route::get('/', \App\Http\Controllers\Contact\IndexController::class)->name('index');
@@ -176,6 +182,18 @@ Route::middleware(['auth', 'admin', 'verified'])->prefix('admin')->group(functio
             Route::get('/{review}/edit', \App\Http\Controllers\Admin\Review\EditController::class)->name('edit');
             Route::patch('/{review}', \App\Http\Controllers\Admin\Review\UpdateController::class)->name('update');
             Route::delete('/{review}', \App\Http\Controllers\Admin\Review\DestroyController::class)->name('destroy');
+        });
+    });
+
+    Route::prefix('gallery')->group(function () {
+        Route::name('admin.gallery.')->group(function () {
+            Route::get('/', \App\Http\Controllers\Admin\Gallery\IndexController::class)->name('index');
+            Route::get('/create', \App\Http\Controllers\Admin\Gallery\CreateController::class)->name('create');
+            Route::post('/', \App\Http\Controllers\Admin\Gallery\StoreController::class)->name('store');
+            Route::get('/{gallery}', \App\Http\Controllers\Admin\Gallery\ShowController::class)->name('show');
+            Route::get('/{gallery}/edit', \App\Http\Controllers\Admin\Gallery\EditController::class)->name('edit');
+            Route::patch('/{gallery}', \App\Http\Controllers\Admin\Gallery\UpdateController::class)->name('update');
+            Route::delete('/{gallery}', \App\Http\Controllers\Admin\Gallery\DestroyController::class)->name('destroy');
         });
     });
 });
