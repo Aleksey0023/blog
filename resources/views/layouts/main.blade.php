@@ -12,15 +12,16 @@
 <div class="edica-loader"></div>
 <header class="edica-header">
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
-            <a class="navbar-brand" href="{{route('post.index')}}"><img src="{{asset('assets/images/logo.png')}}"
-                                                                        alt="logo"></a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white justify-content-end">
             <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#edicaMainNav"
                     aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="edicaMainNav">
                 <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-right" href="{{route('main.index')}}">Главная</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link text-right" href="{{route('post.index')}}">Блог</a>
                     </li>
@@ -78,7 +79,7 @@
     <div class="container">
         <div class="row footer-widget-area pb-0 justify-content-center">
             <div class="text-center">
-                <a href="{{route('post.index')}}" class="footer-brand-wrapper">
+                <a href="{{route('main.index')}}" class="footer-brand-wrapper">
                     <img src="{{asset('assets/images/logo.png')}}" alt="logo">
                 </a>
                 <p class="contact-details">@KHOMIKANASTASIYA<br> Английский для ваших целей<br> +7 913 899 47 10</p>

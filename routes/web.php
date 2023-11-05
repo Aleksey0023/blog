@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::name('main.')->group(function () {
-    Route::get('/', \App\Http\Controllers\Post\IndexController::class)->name('index');
+    Route::get('/', \App\Http\Controllers\Main\IndexController::class)->name('index');
 });
 
 Route::prefix('posts')->group(function () {
