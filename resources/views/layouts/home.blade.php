@@ -20,9 +20,9 @@
                 <a href="{{route('main.index')}}" class="footer-brand-wrapper">
                     <img src="{{asset('assets/images/logo.png')}}" alt="logo">
                 </a>
-                <p class="contact-details">@KHOMIKANASTASIYA<br> Английский для ваших целей<br> +7 913 899 47 10</p>
+                <p class="contact-details">@BUIVALENKOANASTASIYA<br> Английский для ваших целей<br> +7 913 899 47 10</p>
                 <div class="my-2 mx-2">
-                    <a href="https://t.me/khomikanastasiya"><img src="{{asset('assets/images/telegram.png')}}"
+                    <a href="https://t.me/buivalenkoanastasiya"><img src="{{asset('assets/images/telegram.png')}}"
                                                                  alt="telegram" class="mr-2"></a>
                     <a href="https://vk.com/club210918350"><img src="{{asset('assets/images/vk.png')}}" alt="vk" class="mr-2"></a>
                     <a href="tel:+79138994710"><img src="{{asset('assets/images/call.png')}}" alt="call"></a>
