@@ -1,10 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Add an event listener to the submit button
-    document.getElementById("submit-comment").addEventListener("click", function() {
-        // Serialize the form data
+    document.getElementById("submit-comment").addEventListener("click", function () {
         const formData = new FormData(document.getElementById("comment-form"));
 
-        // Send an AJAX request to submit the comment
         fetch(document.getElementById("comment-form").getAttribute("action"), {
             method: "POST",
             body: formData,
@@ -14,11 +11,8 @@ document.addEventListener("DOMContentLoaded", function() {
         })
             .then(response => response.json())
             .then(data => {
-                // Handle the response from the server
                 if (data.success) {
-                    // Clear the comment input field
                     document.getElementById("comment").value = "";
-                    // Update the comment section with the new comment
                     const commentSection = document.querySelector(".comment_list");
                     commentSection.insertAdjacentHTML("beforeend", `
                         <div class="comment-text mb-5" data-aos="fade-up">
@@ -29,6 +23,14 @@ document.addEventListener("DOMContentLoaded", function() {
                             ${data.comment}
                         </div>
                     `);
+
+                    const commentCount = document.getElementById("comment-count");
+                    const currentCount = parseInt(commentCount.textContent);
+                    commentCount.textContent = currentCount + 1;
+
+                    const commentCount2 = document.getElementById("comment-count2");
+                    const currentCount2 = parseInt(commentCount2.textContent);
+                    commentCount2.textContent = currentCount2 + 1;
                 } else {
                     alert("Comment submission failed. Please try again.");
                 }
