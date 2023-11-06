@@ -13,7 +13,7 @@
             </p>
             <p class="edica-blog-post-meta" data-aos="fade-up" data-aos-delay="200">
                 • {{$date->translatedFormat('d-m-Y')}} • {{$date->format('H:i')}} • Комментарии
-                ({{$post->comments->count()}})</p>
+                (<span id="comment-count">{{$post->comments->count()}}</span>)</p>
             <section class="blog-post-featured-img" data-aos="fade-up" data-aos-delay="300">
                 @if($post->main_image == null)
                     <img src="{{asset('assets/images/forSeeds/135258.jpg')}}" alt="featured image" class="w-100">
@@ -81,7 +81,7 @@
                         </section>
                     @endif
                     <section class="comment_list mb-5 mt-5">
-                        <h2 class="section-title mb-4" data-aos="fade-up">Комментарии ({{$post->comments->count()}})</h2>
+                        <h2 class="section-title mb-4" data-aos="fade-up">Комментарии (<span id="comment-count2">{{$post->comments->count()}}</span>)</h2>
                         @foreach($post->comments as $comment)
                             <div class="comment-text mb-5" data-aos="fade-up">
                             <span class="username">
