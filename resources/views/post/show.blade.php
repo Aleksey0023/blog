@@ -14,11 +14,11 @@
             <p class="edica-blog-post-meta" data-aos="fade-up" data-aos-delay="200">
                 • {{$date->translatedFormat('d-m-Y')}} • {{$date->format('H:i')}} • Комментарии
                 (<span id="comment-count">{{$post->comments->count()}}</span>)</p>
-            <section class="blog-post-featured-img" data-aos="fade-up" data-aos-delay="300">
+            <section class="blog-post-featured-img text-center" data-aos="fade-up" data-aos-delay="300">
                 @if($post->main_image == null)
-                    <img src="{{asset('assets/images/forSeeds/135258.jpg')}}" alt="featured image" class="w-100">
+                    <img src="{{asset('assets/images/forSeeds/135258.jpg')}}" alt="featured image" class="max-width-65">
                 @else
-                    <img src="{{asset('storage/' . $post->main_image)}}" alt="featured image" class="w-100">
+                    <img src="{{asset('storage/' . $post->main_image)}}" alt="featured image" class="max-width-65">
                 @endif
             </section>
             <section class="post-content" data-aos="fade-up">

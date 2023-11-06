@@ -35,37 +35,37 @@
                         </ul>
                         @guest()
                             <div class="pr-0 d-flex flex-column align-items-end">
-                            <form action="{{route('login')}}" method="GET">
-                                <input class="btn btn-primary my-2 btn-sm" type="submit" value="Войти">
-                            </form>
-                            <form action="{{route('register')}}" method="GET" >
-                                <input class="btn btn-primary btn-sm" type="submit" value="Регистрация">
-                            </form>
+                                <form action="{{route('login')}}" method="GET">
+                                    <input class="btn btn-primary my-2 btn-sm" type="submit" value="Войти">
+                                </form>
+                                <form action="{{route('register')}}" method="GET">
+                                    <input class="btn btn-primary btn-sm" type="submit" value="Регистрация">
+                                </form>
                             </div>
                         @endguest
                         @auth()
                             @if(auth()->user()->role == 'Админ')
                                 <div class="pr-0 d-flex flex-column align-items-end">
-                                <form action="{{route('admin.main.index')}}" method="GET">
-                                    <input class="btn btn-primary my-2 btn-sm" type="submit" value="Админ">
-                                </form>
-                                <form action="{{route('personal.main.index')}}" method="GET">
-                                    <input class="btn btn-primary btn-sm" type="submit" value="Личный кабинет">
-                                </form>
-                                <form action="{{route('logout')}}" method="POST">
-                                    @csrf
-                                    <input class="btn btn-primary my-2 btn-sm" type="submit" value="Выйти">
-                                </form>
+                                    <form action="{{route('admin.main.index')}}" method="GET">
+                                        <input class="btn btn-primary my-2 btn-sm" type="submit" value="Админ">
+                                    </form>
+                                    <form action="{{route('personal.main.index')}}" method="GET">
+                                        <input class="btn btn-primary btn-sm" type="submit" value="Личный кабинет">
+                                    </form>
+                                    <form action="{{route('logout')}}" method="POST">
+                                        @csrf
+                                        <input class="btn btn-primary my-2 btn-sm" type="submit" value="Выйти">
+                                    </form>
                                 </div>
                             @else
                                 <div class="pr-0 d-flex flex-column align-items-end">
-                                <form action="{{route('personal.main.index')}}" method="GET">
-                                    <input class="btn btn-primary my-2 btn-sm" type="submit" value="Личный кабинет">
-                                </form>
-                                <form action="{{route('logout')}}" method="POST">
-                                    @csrf
-                                    <input class="btn btn-primary btn-sm" type="submit" value="Выйти">
-                                </form>
+                                    <form action="{{route('personal.main.index')}}" method="GET">
+                                        <input class="btn btn-primary my-2 btn-sm" type="submit" value="Личный кабинет">
+                                    </form>
+                                    <form action="{{route('logout')}}" method="POST">
+                                        @csrf
+                                        <input class="btn btn-primary btn-sm" type="submit" value="Выйти">
+                                    </form>
                                 </div>
                             @endif
                         @endauth
@@ -74,7 +74,7 @@
                 <a class="d-flex justify-content-center mt-5" href="{{route('main.index')}}">
                     <img src="{{asset('assets/images/logo.png')}}" alt="logo"></a>
                 <div class="d-flex flex-column align-items-center goal-text my-text2 mt-2">
-                    <p class="home-info">@KHOMIKANASTASIYA</p>
+                    <p class="home-info">@BUIVALENKOANASTASIYA</p>
                     <p class="text-center mt-3 mb-5 pb-5 home-info2">Английский <br> для ваших целей</p>
                 </div>
             </header>
@@ -97,17 +97,17 @@
                         <img src="{{asset('assets/images/logo2.png')}}" alt="">
                         <p class="my-title3 text-center pb-3">Личная программа обучения</p>
                         <p class="text-center">Скорее научиться говорить, чтобы быть готовым к переезду? OK! Больше
-                            разговорных фраз для общения в путешествиях или лексики для экзамена? Сделаем и это. Let's
+                            разговорных фраз для общения в путешествиях или лексики для работы? Сделаем и это. Let's
                             start!</p>
                     </div>
                 </div>
                 <div class="col-lg-4 my-5 goal-text my-text" data-aos="fade-up">
                     <div class="text-logo2">
                         <img src="{{asset('assets/images/logo2.png')}}" alt="">
-                        <p class="my-title3 text-center pb-3">Speaking club</p>
-                        <p class="text-center">С единомышленниками за чашкой чая и просмотром любимых фильмов - что
-                            может быть лучше? Занятие построено в формате обсуждений и диалогов с множеством актуальной
-                            лексики. Вы точно влюбитесь в английский :)</p>
+                        <p class="my-title3 text-center pb-3">Курс по временам</p>
+                        <p class="text-center">На интерактивной платформе для уровней ниже (А2+В1) и выше среднего
+                            (В2+С1), который можно выполнять в своём темпе. Примеры из фильмов, сериалов и книг, правила
+                            с понятными и доступными объяснениями, а также более сотни заданий. Старт в январе!</p>
                     </div>
                 </div>
             </div>
@@ -123,6 +123,8 @@
                             lyricstraining, google docs
                         </li>
                         <li class="mark">коммуникативная методика и множество разговорных заданий</li>
+                        <li class="mark">упор на говорение</li>
+                        <li class="mark">профессиональный английский (при необходимости)</li>
                     </ul>
                 </div>
                 <div class="col-lg-6 picture-what-expect my-5 d-flex justify-content-center" data-aos="fade-left">

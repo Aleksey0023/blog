@@ -4,14 +4,14 @@
         <div class="container">
             <h1 class="edica-page-title" data-aos="fade-up">Отзывы</h1>
             <section class="featured-posts-section">
-                <div class="row justify-content-center">
+                <div class="row justify-content-center align-items-baseline">
                     @foreach($reviews as $review)
                         <div class="col-md-6 mb-5" data-aos="fade-up">
-                            <div class="blog-post-thumbnail-wrapper">
+                            <div class="blog-post-thumbnail-wrapper text-center">
                                 @if($review->main_image == null)
-                                    <img src="{{asset('assets/images/forSeeds/135258.jpg')}}" alt="blog post" class="w-100">
+                                    <img src="{{asset('assets/images/forSeeds/135258.jpg')}}" alt="blog post" class="max-width-75">
                                 @else
-                                    <img src="{{asset('storage/' . $review->main_image)}}" alt="blog post" class="w-100">
+                                    <img src="{{asset('storage/' . $review->main_image)}}" alt="blog post" class="max-width-75">
                                 @endif
                             </div>
                         </div>
