@@ -22,16 +22,16 @@
             </li>
         </ul>
         <ul class="navbar-nav">
-            <li class="nav-item d-flex">
+            <li class="nav-item d-flex pr-0 flex-column align-items-end">
                 <form action="{{route('main.index')}}" method="GET">
-                    <input class="btn btn-primary mr-2 btn-sm" type="submit" value="Перейти на сайт">
+                    <input class="btn btn-primary mr-2 my-2 btn-sm" type="submit" value="Перейти на сайт">
                 </form>
                 <form action="{{route('personal.main.index')}}" method="GET">
                     <input class="btn btn-primary mr-2 btn-sm" type="submit" value="Личный кабинет">
                 </form>
                 <form action="{{route('logout')}}" method="POST">
                     @csrf
-                    <input class="btn btn-primary btn-sm" type="submit" value="Выйти из аккаунта">
+                    <input class="btn btn-primary mr-2 my-2 btn-sm" type="submit" value="Выйти из аккаунта">
                 </form>
             </li>
         </ul>
