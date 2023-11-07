@@ -7968,7 +7968,7 @@ label {
 
 .home-info {
     color: #03a9f4;
-    font-size: 32px;
+    font-size: 30px;
 }
 
 .home-info2 {
@@ -8017,6 +8017,11 @@ li {
 
 .max-width-75 {
     max-width: 75%;
+    height: auto;
+}
+
+.max-width-85 {
+    max-width: 85%;
     height: auto;
 }
 
