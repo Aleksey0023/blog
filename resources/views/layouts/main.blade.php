@@ -91,7 +91,7 @@
                 <a href="{{route('main.index')}}" class="footer-brand-wrapper">
                     <img src="{{asset('assets/images/logo.png')}}" alt="logo">
                 </a>
-                <p class="contact-details">@BUIVALENKOANASTASIYA<br> Английский для ваших целей</p>
+                <p class="contact-details mb-3">@BUIVALENKOANASTASIYA</p>
                 <div class="my-2 mx-2">
                     <a href="https://t.me/buivalenkoanastasiya"><img src="{{asset('assets/images/telegram.png')}}"
                                                                  alt="telegram" class="mr-2"></a>
