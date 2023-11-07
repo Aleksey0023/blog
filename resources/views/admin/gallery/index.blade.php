@@ -4,10 +4,10 @@
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
-                    <div class="col-sm-6">
+                    <div class="col-md-6">
                         <h1 class="m-0">Галерея</h1>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-md-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{route('admin.main.index')}}">Главная</a></li>
                             <li class="breadcrumb-item active">Галерея</li>
@@ -18,19 +18,19 @@
         </div>
         <section class="content">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-1 mb-3">
+                <div class="row mb-3">
+                    <div class="col-4 col-sm-2 col-md-2 col-lg-2 col-xl-2">
                         <a href="{{route('admin.gallery.create')}}" class="btn btn-block btn-primary">Добавить</a>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-12 col-sm-8 col-md-8 col-lg-8 col-xl-4">
                         <div class="card">
                             <div class="card-body table-responsive p-0">
                                 <table class="table table-hover text-nowrap">
-                                    <thead>
+                                    <thead class="text-center">
                                     <tr>
-                                        <th>ID</th>
+                                        <th class="text-left">ID</th>
                                         <th colspan="3">Действия</th>
                                     </tr>
                                     </thead>
@@ -38,11 +38,11 @@
                                     @foreach($gallery as $gall)
                                         <tr>
                                             <td>{{$gall->id}}</td>
-                                            <td><a href="{{route('admin.gallery.show', $gall->id)}}"><i
+                                            <td class="text-center"><a href="{{route('admin.gallery.show', $gall->id)}}"><i
                                                         class="far fa-eye"></i></a></td>
-                                            <td><a href="{{route('admin.gallery.edit', $gall->id)}}"
+                                            <td class="text-center"><a href="{{route('admin.gallery.edit', $gall->id)}}"
                                                    class="text-success"><i class="fas fa-pencil-alt"></i></a></td>
-                                            <td>
+                                            <td class="text-center">
                                                 <form action="{{route('admin.gallery.destroy', $gall->id)}}"
                                                       method="POST">
                                                     @csrf
