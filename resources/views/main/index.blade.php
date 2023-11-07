@@ -143,7 +143,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-lg-6 picture-what-expect my-5 d-flex justify-content-center" data-aos="fade-left">
+                <div class="col-lg-6 picture-what-expect my-5 d-flex justify-content-center my-col" data-aos="fade-left">
                     <img src="{{asset('assets/images/forSeeds/135258.jpg')}}" alt="whatExpect" class="max-width-85">
                 </div>
             </div>
