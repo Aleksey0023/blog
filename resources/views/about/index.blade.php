@@ -19,17 +19,17 @@
                 </div>
             </section>
             <section class="edica-about-goal py-5 mb-5">
-                <div class="row">
-                    <div class="col-md-6 mb-4 mb-md-0 d-flex flex-column justify-content-center" data-aos="fade-right">
+                <div class="row flex-row-reverse">
+                    <div class="col-md-6 pb-3 pb-md-0 mb-4 mb-md-0" data-aos="fade-left" data-aos-delay="200">
+                        <img src="{{asset('assets/images/forSeeds/135258.jpg')}}" alt="vision"
+                             class="img-fluid">
+                    </div>
+                    <div class="col-md-6 mb-md-0 d-flex flex-column justify-content-center" data-aos="fade-right">
                         <p class="goal-text my-text">Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in
                             laying out printed graphic or web designs. The passage is at attributed to an unknown
                             typesetters in 1the 5th century who is thought scrambled with all parts of Cicero’s De.
                             Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out printed
                             graphic or web designs</p>
-                    </div>
-                    <div class="col-md-6" data-aos="fade-left" data-aos-delay="200">
-                        <img src="{{asset('assets/images/forSeeds/135258.jpg')}}" alt="vision"
-                             class="img-fluid">
                     </div>
                 </div>
             </section>

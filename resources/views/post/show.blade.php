@@ -2,7 +2,7 @@
 @section('content')
     <main class="blog-post">
         <div class="container">
-            <h1 class="edica-page-title my-title" data-aos="fade-up">{{$post->title}}</h1>
+            <h1 class="edica-page-title my-title" data-aos="fade-up" style="font-size: 40px;">{{$post->title}}</h1>
             <p class="edica-blog-post-meta mb-3" data-aos="fade-up" data-aos-delay="200">
                 Теги:
                 @forelse($post->tags as $tag)
