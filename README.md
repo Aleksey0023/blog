@@ -41,8 +41,3 @@ MAIL_PASSWORD= тут будет ваше значение<br>
 MAIL_ENCRYPTION=tls<br>
 MAIL_FROM_ADDRESS="john.doe@example.org"<br>
 MAIL_FROM_NAME="John Doe"</p>
-
-
-
-
-
