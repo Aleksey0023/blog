@@ -18,7 +18,7 @@
                 @if($post->main_image == null)
                     <img src="{{asset('assets/images/forSeeds/135258.jpg')}}" alt="featured image" class="max-width-65">
                 @else
-                    <img src="{{asset('storage/' . $post->main_image)}}" alt="featured image" class="max-width-65">
+                    <img src="{{asset('storage/' . $post->main_image)}}" alt="featured image" class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6">
                 @endif
             </section>
             <section class="post-content" data-aos="fade-up">
