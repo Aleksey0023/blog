@@ -7,7 +7,7 @@
                 <div class="row justify-content-center">
                     @foreach($courses as $course)
                         <div class="col-md-4 fetured-post blog-post" data-aos="fade-up">
-                            <div class="blog-post-thumbnail-wrapper">
+                            <div class="blog-post-thumbnail-wrapper" onclick="openCourse('{{ route('course.show', $course->id) }}')">
                                 @if($course->main_image == null)
                                     <img src="{{asset('assets/images/forSeeds/135258.jpg')}}" alt="blog post">
                                 @else
@@ -28,4 +28,10 @@
             </section>
         </div>
     </main>
+
+<script>
+    function openCourse(url) {
+        window.location.href = url;
+    }
+</script>
 @endsection
