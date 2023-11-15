@@ -10,7 +10,13 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $posts = Post::orderBy('created_at', 'DESC')->paginate(6);
+        $page = request('page', 1);
+
+        $posts = Post::orderBy('created_at', 'DESC')->paginate(6, ['*'], 'page', $page);
+
+        if ($posts->isEmpty()) {
+            abort(404);
+        }
 
         $postCount = $posts->count();
 

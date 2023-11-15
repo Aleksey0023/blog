@@ -9,7 +9,14 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $courses = Course::orderBy('created_at', 'DESC')->paginate(6);
+        $page = request('page', 1);
+
+        $courses = Course::orderBy('created_at', 'DESC')->paginate(6, ['*'], 'page', $page);
+
+        if ($courses->isEmpty()) {
+            abort(404);
+        }
+
         return view('course.index', compact('courses'));
     }
 }

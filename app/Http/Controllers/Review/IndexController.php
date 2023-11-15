@@ -9,7 +9,14 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $reviews = Review::orderBy('created_at', 'DESC')->paginate(6);
+        $page = request('page', 1);
+
+        $reviews = Review::orderBy('created_at', 'DESC')->paginate(6, ['*'], 'page', $page);
+
+        if ($reviews->isEmpty()) {
+            abort(404);
+        }
+
         return view('review.index', compact('reviews'));
     }
 }
