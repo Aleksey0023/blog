@@ -51,36 +51,7 @@
                             </div>
                         @endguest
                     </section>
-                    @if($relatedPosts->count() > 0)
-                        <section class="related-posts">
-                            <h2 class="section-title mb-4" data-aos="fade-up">Похожие посты</h2>
-                            <div class="row">
-                                @foreach($relatedPosts as $relatedPosts)
-                                    <div class="col-md-4" data-aos="fade-right" data-aos-delay="100">
-                                        @if($relatedPosts->preview_image == null)
-                                            <img src="{{asset('assets/images/forSeeds/135258.jpg')}}" alt="related post"
-                                                 class="post-thumbnail">
-                                        @else
-                                            <img src="{{asset('storage/' . $relatedPosts->preview_image)}}"
-                                                 alt="related post" class="post-thumbnail">
-                                        @endif
-                                        @if(isset($relatedPosts->category->title))
-                                            <p class="post-category">{{$relatedPosts->category->title}}</p>
-                                        @else
-                                            <p class="post-category">Без категории</p>
-                                        @endif
-                                        <a href="{{route('post.show', $relatedPosts->id)}}"><h5
-                                                class="post-title">{{$relatedPosts->title}}</h5></a>
-                                    </div>
-                                @endforeach
-                            </div>
-                            @else
-                                <section class="related-posts">
-                                    <h2 class="section-title mb-4" data-aos="fade-up">Похожие посты (0)</h2>
-                                </section>
-                        </section>
-                    @endif
-                    <section class="comment_list mb-5 mt-5">
+                    <section class="comment_list comment-section mb-5 mt-5">
                         <h2 class="section-title mb-4" data-aos="fade-up">Комментарии (<span id="comment-count2">{{$post->comments->count()}}</span>)</h2>
                         @foreach($post->comments as $comment)
                             <div class="comment-text mb-5" data-aos="fade-up">
@@ -113,6 +84,35 @@
                             </form>
                         </section>
                     @endauth
+                    @if($relatedPosts->count() > 0)
+                        <section class="related-posts">
+                            <h2 class="section-title mb-4" data-aos="fade-up">Похожие посты</h2>
+                            <div class="row">
+                                @foreach($relatedPosts as $relatedPosts)
+                                    <div class="col-md-4" data-aos="fade-right" data-aos-delay="100">
+                                        @if($relatedPosts->preview_image == null)
+                                            <img src="{{asset('assets/images/forSeeds/135258.jpg')}}" alt="related post"
+                                                 class="post-thumbnail">
+                                        @else
+                                            <img src="{{asset('storage/' . $relatedPosts->preview_image)}}"
+                                                 alt="related post" class="post-thumbnail">
+                                        @endif
+                                        @if(isset($relatedPosts->category->title))
+                                            <p class="post-category">{{$relatedPosts->category->title}}</p>
+                                        @else
+                                            <p class="post-category">Без категории</p>
+                                        @endif
+                                        <a href="{{route('post.show', $relatedPosts->id)}}"><h5
+                                                class="post-title">{{$relatedPosts->title}}</h5></a>
+                                    </div>
+                                @endforeach
+                            </div>
+                            @else
+                                <section class="related-posts">
+                                    <h2 class="section-title mb-4" data-aos="fade-up">Похожие посты (0)</h2>
+                                </section>
+                        </section>
+                    @endif
                 </div>
             </div>
         </div>

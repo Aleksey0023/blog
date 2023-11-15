@@ -6,15 +6,15 @@
             <section class="edica-landing-section edica-landing-about pt-0">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-6 d-flex flex-wrap align-items-end align-content-center" data-aos="fade-up-right">
-                            <p class="my-text">Lorem ipsum dolor sit amet, consectetur adipng elit, sed do eiusmod tempor incididunt ut labore aliqua. Ut enim que minim veniam, quis nostrud exercitation.</p>
+                        <div class="col-md-6 d-flex flex-wrap align-items-end align-content-center" data-aos="fade-right">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipng elit, sed do eiusmod tempor incididunt ut labore aliqua. Ut enim que minim veniam, quis nostrud exercitation.</p>
                             <ul class="landing-about-list">
-                                <li>Lorem ipsum dolor sit amet, consectetur adipng elit</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipng elit</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipng elit</li>
+                                <li style="font-weight: bold">Lorem ipsum dolor sit amet, consectetur adipng elit</li>
+                                <li style="font-weight: bold">Lorem ipsum dolor sit amet, consectetur adipng elit</li>
+                                <li style="font-weight: bold">Lorem ipsum dolor sit amet, consectetur adipng elit</li>
                             </ul>
                         </div>
-                        <div class="col-md-6" data-aos="fade-up-left">
+                        <div class="col-md-6 d-flex justify-content-center" data-aos="fade" data-aos-delay="300">
                             <img src="{{asset('assets/images/forSeeds/135258.jpg')}}" alt="contacts" class="img-fluid">
                         </div>
                     </div>
