@@ -6,7 +6,7 @@
                 <div class="card">
                     <div class="card-header">{{ __('Форма регистрации') }}</div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('register') }}">
+                        <form id="registration-form" method="POST" action="{{ route('register') }}">
                             @csrf
                             <div class="row mb-3">
                                 <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Имя') }}</label>
@@ -69,4 +69,56 @@
             </div>
         </div>
     </div>
+
+    <div id="modal-form" class="modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Уведомление о регистрации</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Регистрация прошла успешно, на ваш email отправлено письмо для подтверждения. Вы будете перенаправлены на главную страницу</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#registration-form").submit(function (event) {
+                event.preventDefault();
+
+                var formData = $(this).serialize();
+
+                $.ajax({
+                    type: "POST",
+                    url: "{{ route('register') }}",
+                    data: formData,
+                    success: function () {
+                        $("#modal-form").modal('show');
+                        $("#registration-form")[0].reset();
+                        $("#modal-form").on('hidden.bs.modal', function () {
+                            window.location.href = "/";
+                        });
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        $(".is-invalid").removeClass('is-invalid');
+                        $(".error-message").remove();
+
+                        var errors = JSON.parse(xhr.responseText);
+
+                        $.each(errors.errors, function (key, value) {
+                            $("#" + key).addClass('is-invalid');
+                            $("#" + key).after('<span class="invalid-feedback error-message" role="alert"><strong>' + value + '</strong></span>');
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 @endsection
