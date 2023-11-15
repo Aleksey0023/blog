@@ -47,9 +47,14 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
-  display: block; }
+  display: block; 
+  flex: 1;
+  flex-shrink: 0; }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   margin: 0;
   font-family: "DM Sans", sans-serif;
   font-size: 1rem;
@@ -7815,6 +7820,10 @@ a.text-dark:hover, a.text-dark:focus {
   .blog-post .comment-section .form-control {
     min-height: 60px;
     padding: 21px 19px; }
+  .blog-post .comment-section .section-title {
+    font-size: 30px;
+    color: #0288d1;
+    line-height: 1.97; }
   .blog-post .comment-section .btn {
     padding: 19px 45px;
     color: #ffffff;
@@ -7945,6 +7954,7 @@ label {
 .my-text {
     font-family: Calibri, sans-serif;
     font-size: 19px;
+    margin-bottom: 0 !important;
 }
 
 .my-text2 {
@@ -7969,6 +7979,12 @@ label {
 .home-info {
     color: #03a9f4;
     font-size: 30px;
+}
+
+@media (max-width: 768px) {
+    .home-info {
+        font-size: 26px;
+    }
 }
 
 .home-info2 {
