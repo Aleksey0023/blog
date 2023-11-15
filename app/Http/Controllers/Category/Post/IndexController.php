@@ -9,7 +9,14 @@ class IndexController extends Controller
 {
     public function __invoke(Category $category)
     {
-        $posts = $category->posts()->orderBy('created_at', 'DESC')->paginate(6);
+        $page = request('page', 1);
+
+        $posts = $category->posts()->orderBy('created_at', 'DESC')->paginate(6, ['*'], 'page', $page);
+
+        if ($posts->isEmpty()) {
+            abort(404);
+        }
+
         $categoryTitle = $category->title;
         return view('category.post.index', compact('posts', 'categoryTitle'));
     }

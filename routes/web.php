@@ -199,3 +199,7 @@ Route::middleware(['auth', 'admin', 'verified'])->prefix('admin')->group(functio
 });
 
 Auth::routes(['verify' => true]);
+
+Route::fallback(function () {
+    return view('errors.404');
+});
